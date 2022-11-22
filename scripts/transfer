@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+const fs = require('fs');
+const path = require('path');
+const ROOT = path.resolve(__dirname, '..');
+
+const TRANSFER = [
+    ['./dist/data.js', './public/data.json', JSON.stringify, require]
+];
+
+for (let [from, to, transformer, loader] of TRANSFER) {
+    if (!loader) loader = f => fs.readFileSync(f, 'utf-8');
+    if (!transformer) transformer = d => d;
+    let data = loader(path.join(ROOT, from), 'utf-8');
+    data = transformer(data);
+    fs.writeFileSync(path.join(ROOT, to), data);
+}
+

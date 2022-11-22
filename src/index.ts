@@ -1,0 +1,5 @@
+/**
+ * Startup.
+ */
+
+import './server';

@@ -1,0 +1,35 @@
+<head>
+    <title>Machine Strike!</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta charset="UTF-8" />
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <center>
+        <div id="header" class="header" id="header" style="color: black;">
+            testing lol
+        </div>
+        <div class="ps-room ps-room-opaque" style="width: auto; right: 0px;">
+            <div class="battle" style="transform: none;"></div>
+            <div class="foehint" style="transform: none;"></div>
+            <div class="battle-controls" role="complementary" aria-label="Battle Controls" style="top: 370px;">
+                <div class="controls" id="controls-outer">
+                    <p><span style="float:right;" id="controls"> CONTROLS </span></p>
+                </div>
+            </div>
+            <div class="battle-log" id="team">use this panel for data on current team</div>
+        </div>
+        <div class="ps-room ps-room-light" id="data" style="overflow: auto; left: 1018px; width: auto; right: 0px; display: block;" id="room-staff">
+            piece data
+        </div>
+    </center>
+    <script type="module">
+        import App from './app.js';
+        window.app = new App();
+    </script>
+</body>
